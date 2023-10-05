@@ -71,4 +71,123 @@ const departments = {
     }
 }
 
-console.log(departments);
+// //Opdracht 1 - Gegevens aanspreken\\ \\
+// opdr 1a
+console.log('De afdeling Sales heeft ' + departments.sales.numberOfEmployees + ' medewerkers');
+
+// opdr 1b
+console.log(' Marketing is een leuke afdeling om te werken. ' + departments.marketing.description);
+
+// opdr 1c----------------------------------------+ object [er zit een streep tussen dus blokhaak].object
+console.log('De afdeling Customer Service heeft ' + departments["customer-service"].numberOfEmployees + ' medewerkers');
+// edhub 38:25 voor uitleg
+
+
+// opdr 1d --------------------------------------------------------------------- + object    .obje.obje[array].object
+console.log('Sales is een uitdagende afdeling om te werken als Verkoopmanager. ' + departments.sales.jobs[1].description);
+
+// const userInput = prompt('Hoi! Hoe heet je?');
+// console.log(userInput);
+
+
+//Opdracht 2 - prompten en beslissen\\\\\
+// opdr 2a
+const deparmentChoice = prompt('Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service]');
+
+// print uit wat hier boven gevraagd word
+console.log(deparmentChoice);
+
+
+//opdr 2b
+switch (deparmentChoice) {
+    case'marketing':
+// 'je koos ' en '. '= zijn statische strings
+//  deparmentChoice: Dit lijkt een variabele
+        console.log('je koos ' + deparmentChoice + '. ' + departments.marketing.description);
+        break;
+
+    case'sales':
+        console.log('je koos ' + deparmentChoice + '. ' + departments.sales.description);
+        break;
+    case'customer-service':
+        console.log('je koos ' + deparmentChoice + '. ' + departments["customer-service"].description);
+        break;
+
+// Opdracht 2c: test of alles werkt+ als er een fout word gemaakt dat het ook
+//         op een vriendelijke manier word weergegeven(geprint)
+
+    default:
+        console.error('foute invoer probeer het nog eens door de website te verversen');
+}
+
+
+// //Opdracht 3 - een nieuwe prompt\\ \\
+// opdr 3a
+
+// const choiceJobs = prompt('je koos marketing. '
+//     + ' Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in. '
+//     + departments.marketing.jobs[0].title + ', 1: '
+//     + departments.marketing.jobs[1].title + ', 2: '
+//     + departments.marketing.jobs[2].title + ', 3: '
+//     + departments.marketing.jobs[3].title
+// );
+
+// console.log(choiceJobs);
+
+// 3b+c
+// switch (choiceJobs) {
+//     case'0':
+//         console.log('je koos ' + departments.marketing.jobs[0].title + '. Een uitdagende rol! ' + departments.marketing.jobs[0].description);
+//         break;
+//     case'1':
+//         console.log('je koos ' + departments.marketing.jobs[1].title + '. Een uitdagende rol! ' + departments.marketing.jobs[1].description);
+//         break;
+//     case'2':
+//         console.log('je koos ' + departments.marketing.jobs[2].title + '. Een uitdagende rol! ' + departments.marketing.jobs[2].description);
+//         break;
+//     case'3':
+//         console.log('je koos ' + departments.marketing.jobs[3].title + '. Een uitdagende rol! ' + departments.marketing.jobs[3].description);
+//         break;
+//     default:
+//         console.error (' Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.');
+//
+// }
+
+// //Opdracht 4\\ \\
+// opdr4a
+console.log(deparmentChoice + ' is een leuke afdeling om te werken. Er werken op dit moment ' + departments [deparmentChoice].numberOfEmployees + ' medewerkers.');
+
+//opdr4b
+const choiceJobs = prompt('Je koos. '
+    + deparmentChoice
+    + ' .'
+    + ' Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in. '
+    + departments.marketing.jobs[0].title + ', 1: '
+    + departments.marketing.jobs[1].title + ', 2: '
+    + departments.marketing.jobs[2].title + ', 3: '
+    + departments.marketing.jobs[3].title
+);
+
+console.log(choiceJobs);
+
+// opdr4c
+switch (choiceJobs) {
+    case'0':
+        console.log('je koos ' + departments[deparmentChoice].jobs.title + '. Een uitdagende rol! ' + departments[deparmentChoice].jobs[0].description);
+
+        break;
+    case'1':
+        console.log('je koos ' + departments[deparmentChoice].jobs[1].title + '. Een uitdagende rol! ' + departments[deparmentChoice].jobs[1].description);
+        break;
+    case'2':
+        console.log('je koos ' + departments[deparmentChoice].jobs[2].title + '. Een uitdagende rol! ' + departments[deparmentChoice].jobs[2].description);
+        break;
+    case'3':
+        console.log('je koos ' + departments[deparmentChoice].jobs[3].title + '. Een uitdagende rol! ' + departments[deparmentChoice].jobs[3].description);
+        break;
+    default:
+        console.error(' Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.');
+
+}
+
+
